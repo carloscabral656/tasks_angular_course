@@ -82,4 +82,12 @@ export class ListComponent {
     return localStorage.setItem('@my-list', JSON.stringify(this.#setListItems()));
   }
 
+  public deleteItemText(id: any) {
+    this.#setListItems.update((oldValue: IListItems[]) => {
+      return oldValue.filter((res) => res.id !== id);
+    });
+
+    return localStorage.setItem('@my-list', JSON.stringify(this.#setListItems()));
+  }
+
 }
