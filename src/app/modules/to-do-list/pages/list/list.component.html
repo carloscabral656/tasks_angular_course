@@ -22,4 +22,25 @@
   [inputListItems]="getListItems()"
   (outputAddListItems)="getInputAndAddItem($event)"
 />
+
+<main class="container">
+  <h2>Pendências</h2>
+  <app-input-list-item 
+    [inputListItems]="listItemsStage('pending')"
+    />
+
+  <h2>Concluídas</h2>
+  <app-input-list-item 
+    [inputListItems]="listItemsStage('completed')"
+    />
+</main>
+
+<footer>
+  <button 
+    class="btn btn-danger"
+    (click)="deleteAllItems()"
+    >
+    Deletar todos os items
+  </button>
+</footer>
 }
